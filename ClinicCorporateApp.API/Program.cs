@@ -1,7 +1,9 @@
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
 using Serilog;
 using System;
+using System.IO;
 
 namespace ClinicCorporateApp.API
 {
@@ -9,11 +11,8 @@ namespace ClinicCorporateApp.API
     {
         public static void Main(string[] args)
         {
-            Log.Logger = new LoggerConfiguration()
-                .Enrich.FromLogContext()
-                .WriteTo.Console()
-                .WriteTo.File("log.txt", fileSizeLimitBytes: 100000, rollOnFileSizeLimit: true, rollingInterval: RollingInterval.Day)
-                .CreateLogger();
+            IConfigurationRoot configuration = GetConfiguration();
+            LogConfig(configuration);
 
             try
             {
@@ -29,6 +28,25 @@ namespace ClinicCorporateApp.API
             {
                 Log.CloseAndFlush();
             }
+        }
+
+        private static void LogConfig(IConfigurationRoot configuration)
+        {
+            Log.Logger = new LoggerConfiguration()
+                            .ReadFrom.Configuration(configuration)
+                            .CreateLogger();
+        }
+
+        private static IConfigurationRoot GetConfiguration()
+        {
+            string ambiente = Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT");
+
+            var configuration = new ConfigurationBuilder()
+                .SetBasePath(Directory.GetCurrentDirectory())
+                .AddJsonFile("appsettings.json")
+                .AddJsonFile($"appsettings.{ambiente}.json")
+                .Build();
+            return configuration;
         }
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>

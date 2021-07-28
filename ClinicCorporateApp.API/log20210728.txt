@@ -1,0 +1,169 @@
+2021-07-28 11:52:16.870 -03:00 [INF] Iniciando o WebApi
+2021-07-28 11:52:17.823 -03:00 [DBG] Hosting starting
+2021-07-28 11:52:17.959 -03:00 [DBG] An 'IServiceProvider' was created for internal use by Entity Framework.
+2021-07-28 11:52:18.415 -03:00 [INF] Entity Framework Core 5.0.8 initialized 'ClinicCorporateContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2021-07-28 11:52:18.449 -03:00 [DBG] Migrating using database 'ClinicCorporateDB' on server '(localdb)\MSSQLLocalDB'.
+2021-07-28 11:52:18.454 -03:00 [DBG] Opening connection to database 'ClinicCorporateDB' on server '(localdb)\MSSQLLocalDB'.
+2021-07-28 11:52:21.117 -03:00 [DBG] Opened connection to database 'ClinicCorporateDB' on server '(localdb)\MSSQLLocalDB'.
+2021-07-28 11:52:21.123 -03:00 [DBG] Creating DbCommand for 'ExecuteNonQuery'.
+2021-07-28 11:52:21.128 -03:00 [DBG] Created DbCommand for 'ExecuteNonQuery' (4ms).
+2021-07-28 11:52:21.133 -03:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2021-07-28 11:52:21.152 -03:00 [INF] Executed DbCommand (19ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2021-07-28 11:52:21.153 -03:00 [DBG] Closing connection to database 'ClinicCorporateDB' on server '(localdb)\MSSQLLocalDB'.
+2021-07-28 11:52:21.156 -03:00 [DBG] Closed connection to database 'ClinicCorporateDB' on server '(localdb)\MSSQLLocalDB'.
+2021-07-28 11:52:21.160 -03:00 [DBG] Creating DbCommand for 'ExecuteScalar'.
+2021-07-28 11:52:21.160 -03:00 [DBG] Created DbCommand for 'ExecuteScalar' (0ms).
+2021-07-28 11:52:21.160 -03:00 [DBG] Opening connection to database 'ClinicCorporateDB' on server '(localdb)\MSSQLLocalDB'.
+2021-07-28 11:52:21.161 -03:00 [DBG] Opened connection to database 'ClinicCorporateDB' on server '(localdb)\MSSQLLocalDB'.
+2021-07-28 11:52:21.161 -03:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2021-07-28 11:52:21.173 -03:00 [INF] Executed DbCommand (12ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2021-07-28 11:52:21.173 -03:00 [DBG] Closing connection to database 'ClinicCorporateDB' on server '(localdb)\MSSQLLocalDB'.
+2021-07-28 11:52:21.174 -03:00 [DBG] Closed connection to database 'ClinicCorporateDB' on server '(localdb)\MSSQLLocalDB'.
+2021-07-28 11:52:21.176 -03:00 [DBG] Opening connection to database 'ClinicCorporateDB' on server '(localdb)\MSSQLLocalDB'.
+2021-07-28 11:52:21.176 -03:00 [DBG] Opened connection to database 'ClinicCorporateDB' on server '(localdb)\MSSQLLocalDB'.
+2021-07-28 11:52:21.176 -03:00 [DBG] Creating DbCommand for 'ExecuteNonQuery'.
+2021-07-28 11:52:21.176 -03:00 [DBG] Created DbCommand for 'ExecuteNonQuery' (0ms).
+2021-07-28 11:52:21.176 -03:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2021-07-28 11:52:21.177 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2021-07-28 11:52:21.177 -03:00 [DBG] Closing connection to database 'ClinicCorporateDB' on server '(localdb)\MSSQLLocalDB'.
+2021-07-28 11:52:21.177 -03:00 [DBG] Closed connection to database 'ClinicCorporateDB' on server '(localdb)\MSSQLLocalDB'.
+2021-07-28 11:52:21.177 -03:00 [DBG] Creating DbCommand for 'ExecuteScalar'.
+2021-07-28 11:52:21.177 -03:00 [DBG] Created DbCommand for 'ExecuteScalar' (0ms).
+2021-07-28 11:52:21.177 -03:00 [DBG] Opening connection to database 'ClinicCorporateDB' on server '(localdb)\MSSQLLocalDB'.
+2021-07-28 11:52:21.177 -03:00 [DBG] Opened connection to database 'ClinicCorporateDB' on server '(localdb)\MSSQLLocalDB'.
+2021-07-28 11:52:21.177 -03:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2021-07-28 11:52:21.177 -03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2021-07-28 11:52:21.177 -03:00 [DBG] Closing connection to database 'ClinicCorporateDB' on server '(localdb)\MSSQLLocalDB'.
+2021-07-28 11:52:21.177 -03:00 [DBG] Closed connection to database 'ClinicCorporateDB' on server '(localdb)\MSSQLLocalDB'.
+2021-07-28 11:52:21.194 -03:00 [DBG] Creating DbCommand for 'ExecuteReader'.
+2021-07-28 11:52:21.194 -03:00 [DBG] Created DbCommand for 'ExecuteReader' (0ms).
+2021-07-28 11:52:21.194 -03:00 [DBG] Opening connection to database 'ClinicCorporateDB' on server '(localdb)\MSSQLLocalDB'.
+2021-07-28 11:52:21.194 -03:00 [DBG] Opened connection to database 'ClinicCorporateDB' on server '(localdb)\MSSQLLocalDB'.
+2021-07-28 11:52:21.194 -03:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2021-07-28 11:52:21.195 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2021-07-28 11:52:21.197 -03:00 [DBG] A data reader was disposed.
+2021-07-28 11:52:21.197 -03:00 [DBG] Closing connection to database 'ClinicCorporateDB' on server '(localdb)\MSSQLLocalDB'.
+2021-07-28 11:52:21.197 -03:00 [DBG] Closed connection to database 'ClinicCorporateDB' on server '(localdb)\MSSQLLocalDB'.
+2021-07-28 11:52:21.206 -03:00 [INF] No migrations were applied. The database is already up to date.
+2021-07-28 11:52:21.207 -03:00 [DBG] 'ClinicCorporateContext' disposed.
+2021-07-28 11:52:21.329 -03:00 [DBG] Failed to locate the development https certificate at 'null'.
+2021-07-28 11:52:21.385 -03:00 [DBG] Using development certificate: CN=localhost (Thumbprint: E90FE4E67FCAF6BC4349A84A52EDC72F875A9717)
+2021-07-28 11:52:21.420 -03:00 [INF] Now listening on: https://localhost:5001
+2021-07-28 11:52:21.420 -03:00 [INF] Now listening on: http://localhost:5000
+2021-07-28 11:52:21.420 -03:00 [DBG] Loaded hosting startup assembly ClinicCorporateApp.API
+2021-07-28 11:52:21.420 -03:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-07-28 11:52:21.420 -03:00 [INF] Hosting environment: Development
+2021-07-28 11:52:21.420 -03:00 [INF] Content root path: C:\Users\Lucas Sobrinho\Desktop\CursoAppsCorporativas\ClinicCorporateApp\ClinicCorporateApp.API
+2021-07-28 11:52:21.420 -03:00 [DBG] Hosting started
+2021-07-28 11:52:21.735 -03:00 [DBG] Connection id "0HMAHQT6V8VJ1" accepted.
+2021-07-28 11:52:21.735 -03:00 [DBG] Connection id "0HMAHQT6V8VJ0" accepted.
+2021-07-28 11:52:21.735 -03:00 [DBG] Connection id "0HMAHQT6V8VJ1" started.
+2021-07-28 11:52:21.735 -03:00 [DBG] Connection id "0HMAHQT6V8VJ0" started.
+2021-07-28 11:52:21.749 -03:00 [DBG] Connection id "0HMAHQT6V8VJ0" received FIN.
+2021-07-28 11:52:21.749 -03:00 [DBG] Connection id "0HMAHQT6V8VJ1" received FIN.
+2021-07-28 11:52:21.765 -03:00 [DBG] Failed to authenticate HTTPS connection.
+System.IO.IOException: Authentication failed because the remote party has closed the transport stream.
+   at System.Net.Security.SslStream.StartReadFrame(Byte[] buffer, Int32 readBytes, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslStream.StartReceiveBlob(Byte[] buffer, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslStream.ForceAuthentication(Boolean receiveFirst, Byte[] buffer, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslStream.ProcessAuthentication(LazyAsyncResult lazyResult, CancellationToken cancellationToken)
+   at System.Net.Security.SslStream.BeginAuthenticateAsServer(SslServerAuthenticationOptions sslServerAuthenticationOptions, CancellationToken cancellationToken, AsyncCallback asyncCallback, Object asyncState)
+   at System.Net.Security.SslStream.<>c.<AuthenticateAsServerAsync>b__69_0(SslServerAuthenticationOptions arg1, CancellationToken arg2, AsyncCallback callback, Object state)
+   at System.Threading.Tasks.TaskFactory`1.FromAsyncImpl[TArg1,TArg2](Func`5 beginMethod, Func`2 endFunction, Action`1 endAction, TArg1 arg1, TArg2 arg2, Object state, TaskCreationOptions creationOptions)
+   at System.Threading.Tasks.TaskFactory.FromAsync[TArg1,TArg2](Func`5 beginMethod, Action`1 endMethod, TArg1 arg1, TArg2 arg2, Object state, TaskCreationOptions creationOptions)
+   at System.Threading.Tasks.TaskFactory.FromAsync[TArg1,TArg2](Func`5 beginMethod, Action`1 endMethod, TArg1 arg1, TArg2 arg2, Object state)
+   at System.Net.Security.SslStream.AuthenticateAsServerAsync(SslServerAuthenticationOptions sslServerAuthenticationOptions, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Https.Internal.HttpsConnectionMiddleware.InnerOnConnectionAsync(ConnectionContext context)
+2021-07-28 11:52:21.765 -03:00 [DBG] Failed to authenticate HTTPS connection.
+System.IO.IOException: Authentication failed because the remote party has closed the transport stream.
+   at System.Net.Security.SslStream.StartReadFrame(Byte[] buffer, Int32 readBytes, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslStream.StartReceiveBlob(Byte[] buffer, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslStream.ForceAuthentication(Boolean receiveFirst, Byte[] buffer, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslStream.ProcessAuthentication(LazyAsyncResult lazyResult, CancellationToken cancellationToken)
+   at System.Net.Security.SslStream.BeginAuthenticateAsServer(SslServerAuthenticationOptions sslServerAuthenticationOptions, CancellationToken cancellationToken, AsyncCallback asyncCallback, Object asyncState)
+   at System.Net.Security.SslStream.<>c.<AuthenticateAsServerAsync>b__69_0(SslServerAuthenticationOptions arg1, CancellationToken arg2, AsyncCallback callback, Object state)
+   at System.Threading.Tasks.TaskFactory`1.FromAsyncImpl[TArg1,TArg2](Func`5 beginMethod, Func`2 endFunction, Action`1 endAction, TArg1 arg1, TArg2 arg2, Object state, TaskCreationOptions creationOptions)
+   at System.Threading.Tasks.TaskFactory.FromAsync[TArg1,TArg2](Func`5 beginMethod, Action`1 endMethod, TArg1 arg1, TArg2 arg2, Object state, TaskCreationOptions creationOptions)
+   at System.Threading.Tasks.TaskFactory.FromAsync[TArg1,TArg2](Func`5 beginMethod, Action`1 endMethod, TArg1 arg1, TArg2 arg2, Object state)
+   at System.Net.Security.SslStream.AuthenticateAsServerAsync(SslServerAuthenticationOptions sslServerAuthenticationOptions, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Https.Internal.HttpsConnectionMiddleware.InnerOnConnectionAsync(ConnectionContext context)
+2021-07-28 11:52:21.770 -03:00 [DBG] Connection id "0HMAHQT6V8VJ1" stopped.
+2021-07-28 11:52:21.770 -03:00 [DBG] Connection id "0HMAHQT6V8VJ0" stopped.
+2021-07-28 11:52:21.772 -03:00 [DBG] Connection id "0HMAHQT6V8VJ1" sending FIN because: "The Socket transport's send loop completed gracefully."
+2021-07-28 11:52:21.772 -03:00 [DBG] Connection id "0HMAHQT6V8VJ0" sending FIN because: "The Socket transport's send loop completed gracefully."
+2021-07-28 11:52:22.001 -03:00 [DBG] Connection id "0HMAHQT6V8VJ2" accepted.
+2021-07-28 11:52:22.002 -03:00 [DBG] Connection id "0HMAHQT6V8VJ2" started.
+2021-07-28 11:52:22.114 -03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/index.html  
+2021-07-28 11:52:22.116 -03:00 [DBG] Wildcard detected, all requests with hosts will be allowed.
+2021-07-28 11:52:22.179 -03:00 [DBG] FluentValidationRules Created
+2021-07-28 11:52:22.209 -03:00 [INF] Request finished in 98.1533ms 200 text/html;charset=utf-8
+2021-07-28 11:52:22.299 -03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger/v1/swagger.json  
+2021-07-28 11:52:22.388 -03:00 [DBG] Applying FluentValidation rules to swagger schema 'NovoCliente'.
+2021-07-28 11:52:22.389 -03:00 [DBG] Rule 'Required' applied for property 'NovoCliente.nome'.
+2021-07-28 11:52:22.392 -03:00 [DBG] Rule 'Required' applied for property 'NovoCliente.nome'.
+2021-07-28 11:52:22.394 -03:00 [DBG] Rule 'NotEmpty' applied for property 'NovoCliente.nome'.
+2021-07-28 11:52:22.395 -03:00 [DBG] Rule 'Length' applied for property 'NovoCliente.nome'.
+2021-07-28 11:52:22.395 -03:00 [DBG] Rule 'Length' applied for property 'NovoCliente.nome'.
+2021-07-28 11:52:22.396 -03:00 [DBG] Rule 'Required' applied for property 'NovoCliente.dataNascimento'.
+2021-07-28 11:52:22.396 -03:00 [DBG] Rule 'Required' applied for property 'NovoCliente.dataNascimento'.
+2021-07-28 11:52:22.396 -03:00 [DBG] Rule 'NotEmpty' applied for property 'NovoCliente.dataNascimento'.
+2021-07-28 11:52:22.396 -03:00 [DBG] Rule 'Comparison' applied for property 'NovoCliente.dataNascimento'.
+2021-07-28 11:52:22.396 -03:00 [DBG] Rule 'Comparison' applied for property 'NovoCliente.dataNascimento'.
+2021-07-28 11:52:22.397 -03:00 [DBG] Rule 'Required' applied for property 'NovoCliente.sexo'.
+2021-07-28 11:52:22.397 -03:00 [DBG] Rule 'Required' applied for property 'NovoCliente.sexo'.
+2021-07-28 11:52:22.397 -03:00 [DBG] Rule 'NotEmpty' applied for property 'NovoCliente.sexo'.
+2021-07-28 11:52:22.397 -03:00 [DBG] Rule 'Required' applied for property 'NovoCliente.telefone'.
+2021-07-28 11:52:22.397 -03:00 [DBG] Rule 'Required' applied for property 'NovoCliente.telefone'.
+2021-07-28 11:52:22.397 -03:00 [DBG] Rule 'NotEmpty' applied for property 'NovoCliente.telefone'.
+2021-07-28 11:52:22.397 -03:00 [DBG] Rule 'Pattern' applied for property 'NovoCliente.telefone'.
+2021-07-28 11:52:22.397 -03:00 [DBG] Rule 'Required' applied for property 'NovoCliente.documento'.
+2021-07-28 11:52:22.397 -03:00 [DBG] Rule 'Required' applied for property 'NovoCliente.documento'.
+2021-07-28 11:52:22.397 -03:00 [DBG] Rule 'NotEmpty' applied for property 'NovoCliente.documento'.
+2021-07-28 11:52:22.398 -03:00 [DBG] Rule 'Length' applied for property 'NovoCliente.documento'.
+2021-07-28 11:52:22.398 -03:00 [DBG] Rule 'Length' applied for property 'NovoCliente.documento'.
+2021-07-28 11:52:22.409 -03:00 [DBG] Applying FluentValidation rules to swagger schema 'AlteraCliente'.
+2021-07-28 11:52:22.409 -03:00 [DBG] Rule 'Required' applied for property 'AlteraCliente.id'.
+2021-07-28 11:52:22.409 -03:00 [DBG] Rule 'Required' applied for property 'AlteraCliente.id'.
+2021-07-28 11:52:22.410 -03:00 [DBG] Rule 'NotEmpty' applied for property 'AlteraCliente.id'.
+2021-07-28 11:52:22.411 -03:00 [DBG] Rule 'Comparison' applied for property 'AlteraCliente.id'.
+2021-07-28 11:52:22.412 -03:00 [DBG] Applying FluentValidation rules to swagger schema 'AlteraCliente'.
+2021-07-28 11:52:22.412 -03:00 [DBG] Rule 'Required' applied for property 'AlteraCliente.nome'.
+2021-07-28 11:52:22.412 -03:00 [DBG] Rule 'Required' applied for property 'AlteraCliente.nome'.
+2021-07-28 11:52:22.412 -03:00 [DBG] Rule 'NotEmpty' applied for property 'AlteraCliente.nome'.
+2021-07-28 11:52:22.412 -03:00 [DBG] Rule 'Length' applied for property 'AlteraCliente.nome'.
+2021-07-28 11:52:22.412 -03:00 [DBG] Rule 'Length' applied for property 'AlteraCliente.nome'.
+2021-07-28 11:52:22.413 -03:00 [DBG] Rule 'Required' applied for property 'AlteraCliente.dataNascimento'.
+2021-07-28 11:52:22.413 -03:00 [DBG] Rule 'Required' applied for property 'AlteraCliente.dataNascimento'.
+2021-07-28 11:52:22.413 -03:00 [DBG] Rule 'NotEmpty' applied for property 'AlteraCliente.dataNascimento'.
+2021-07-28 11:52:22.413 -03:00 [DBG] Rule 'Comparison' applied for property 'AlteraCliente.dataNascimento'.
+2021-07-28 11:52:22.413 -03:00 [DBG] Rule 'Comparison' applied for property 'AlteraCliente.dataNascimento'.
+2021-07-28 11:52:22.413 -03:00 [DBG] Rule 'Required' applied for property 'AlteraCliente.sexo'.
+2021-07-28 11:52:22.413 -03:00 [DBG] Rule 'Required' applied for property 'AlteraCliente.sexo'.
+2021-07-28 11:52:22.413 -03:00 [DBG] Rule 'NotEmpty' applied for property 'AlteraCliente.sexo'.
+2021-07-28 11:52:22.413 -03:00 [DBG] Rule 'Required' applied for property 'AlteraCliente.telefone'.
+2021-07-28 11:52:22.413 -03:00 [DBG] Rule 'Required' applied for property 'AlteraCliente.telefone'.
+2021-07-28 11:52:22.413 -03:00 [DBG] Rule 'NotEmpty' applied for property 'AlteraCliente.telefone'.
+2021-07-28 11:52:22.413 -03:00 [DBG] Rule 'Pattern' applied for property 'AlteraCliente.telefone'.
+2021-07-28 11:52:22.413 -03:00 [DBG] Rule 'Required' applied for property 'AlteraCliente.documento'.
+2021-07-28 11:52:22.413 -03:00 [DBG] Rule 'Required' applied for property 'AlteraCliente.documento'.
+2021-07-28 11:52:22.413 -03:00 [DBG] Rule 'NotEmpty' applied for property 'AlteraCliente.documento'.
+2021-07-28 11:52:22.413 -03:00 [DBG] Rule 'Length' applied for property 'AlteraCliente.documento'.
+2021-07-28 11:52:22.413 -03:00 [DBG] Rule 'Length' applied for property 'AlteraCliente.documento'.
+2021-07-28 11:52:22.450 -03:00 [INF] Request finished in 150.4916ms 200 application/json;charset=utf-8
+2021-07-28 11:52:28.723 -03:00 [INF] Iniciando o WebApi
+2021-07-28 11:52:29.345 -03:00 [DBG] Hosting starting
+2021-07-28 11:52:29.486 -03:00 [DBG] An 'IServiceProvider' was created for internal use by Entity Framework.

@@ -3,6 +3,8 @@ using ClinicCorporateApp.Core.Shared.ModelViews;
 using ClinicCorporateApp.Manager.Interfaces;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
+using SerilogTimings;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,9 +19,12 @@ namespace ClinicCorporateApp.API.Controllers
     public class ClientesController : ControllerBase
     {
         private readonly IClienteManager clienteManager;
-        public ClientesController(IClienteManager clienteManager)
+        private readonly ILogger<ClientesController> logger;
+
+        public ClientesController(IClienteManager clienteManager, ILogger<ClientesController> logger)
         {
             this.clienteManager = clienteManager;
+            this.logger = logger;
         }
 
         /// <summary>
@@ -37,7 +42,7 @@ namespace ClinicCorporateApp.API.Controllers
         /// <summary>
         /// Retorna um cliente consultado pelo id.
         /// </summary>
-        /// <param name="id">Id od cliente</param>
+        /// <param name="id">Id do cliente</param>
         /// <returns></returns>
         [HttpGet("{id}")]
         [ProducesResponseType(typeof(Cliente), StatusCodes.Status200OK)]
@@ -58,7 +63,14 @@ namespace ClinicCorporateApp.API.Controllers
         [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status500InternalServerError)]
         public async Task<IActionResult> Post(NovoCliente novoCliente)
         {
-            var clienteInserido = await clienteManager.InsertClienteAsync(novoCliente);
+            logger.LogInformation("Objeto recebido: {@novoCliente}", novoCliente);
+
+            Cliente clienteInserido;
+            using (Operation.Time("Tempo de adição de um novo cliente."))
+            {
+                logger.LogInformation("Foi requisitado a inserção de um novo cliente.");
+                clienteInserido = await clienteManager.InsertClienteAsync(novoCliente);
+            }
             return CreatedAtAction(nameof(Get), new { id = clienteInserido.Id }, clienteInserido);
         }
 
