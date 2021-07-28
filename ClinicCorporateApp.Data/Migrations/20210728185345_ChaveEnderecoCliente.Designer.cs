@@ -4,14 +4,16 @@ using ClinicCorporateApp.Data.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace ClinicCorporateApp.Data.Migrations
 {
     [DbContext(typeof(ClinicCorporateContext))]
-    partial class ClinicCorporateContextModelSnapshot : ModelSnapshot
+    [Migration("20210728185345_ChaveEnderecoCliente")]
+    partial class ChaveEnderecoCliente
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

@@ -1,6 +1,7 @@
 ﻿using ClinicCorporateApp.Manager.Validator;
 using FluentValidation.AspNetCore;
 using Microsoft.Extensions.DependencyInjection;
+using Newtonsoft.Json;
 using System.Globalization;
 
 namespace ClinicCorporateApp.API.Configuration
@@ -9,11 +10,12 @@ namespace ClinicCorporateApp.API.Configuration
     {
         public static void AddFluentValidationConfig(this IServiceCollection services)
         {
-            services.AddControllers()//.AddNewtonsoftJson(x => x.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore)
+            services.AddControllers().AddNewtonsoftJson(x => x.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore)
                 .AddFluentValidation(x =>
                 {
                     x.RegisterValidatorsFromAssemblyContaining<NovoClienteValidator>();
                     x.RegisterValidatorsFromAssemblyContaining<AlteraClienteValidator>();
+                    x.RegisterValidatorsFromAssemblyContaining<NovoEnderecoValidator>();
                     x.ValidatorOptions.LanguageManager.Culture = new CultureInfo("pt-BR");
                 });
         }

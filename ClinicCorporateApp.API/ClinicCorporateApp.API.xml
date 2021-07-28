@@ -14,7 +14,7 @@
             <summary>
             Retorna um cliente consultado pelo id.
             </summary>
-            <param name="id">Id od cliente</param>
+            <param name="id">Id do cliente</param>
             <returns></returns>
         </member>
         <member name="M:ClinicCorporateApp.API.Controllers.ClientesController.Post(ClinicCorporateApp.Core.Shared.ModelViews.NovoCliente)">

@@ -12,5 +12,7 @@ namespace ClinicCorporateApp.Core.Shared.ModelViews
         public char Sexo { get; set; }
         public string Telefone { get; set; }
         public string Documento { get; set; }
+
+        public NovoEndereco Endereco { get; set; }
     }
 }
