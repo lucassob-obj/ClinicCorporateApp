@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ClinicCorporateApp.Core.Shared</name>
+    </assembly>
+    <members>
+        <member name="T:ClinicCorporateApp.Core.Shared.ModelViews.AlteraCliente">
+            <summary>
+            Objeto utilizado para alteração do cliente.
+            </summary>
+        </member>
+        <member name="T:ClinicCorporateApp.Core.Shared.ModelViews.NovoCliente">
+            <summary>
+            Objeto utilizado para inserção de um novo cliente.
+            </summary>
+        </member>
+    </members>
+</doc>
