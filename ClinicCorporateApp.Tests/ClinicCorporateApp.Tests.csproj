@@ -26,6 +26,7 @@
     <ProjectReference Include="..\ClinicCorporateApp.API\ClinicCorporateApp.API.csproj" />
     <ProjectReference Include="..\ClinicCorporateApp.Core\ClinicCorporateApp.Core.csproj" />
     <ProjectReference Include="..\ClinicCorporateApp.Data\ClinicCorporateApp.Data.csproj" />
+    <ProjectReference Include="..\ClinicCorporateApp.FakeData\ClinicCorporateApp.FakeData.csproj" />
     <ProjectReference Include="..\ClinicCorporateApp.Manager\ClinicCorporateApp.Manager.csproj" />
   </ItemGroup>
 

@@ -53,7 +53,12 @@ namespace ClinicCorporateApp.API.Controllers
         [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status500InternalServerError)]
         public async Task<IActionResult> Get(int id)
         {
-            return Ok(await clienteManager.GetClienteAsync(id));
+            var cliente = await clienteManager.GetClienteAsync(id);
+            if (cliente.Id == 0)
+            {
+                return NotFound();
+            }
+            return Ok(cliente);
         }
 
         /// <summary>
@@ -90,8 +95,10 @@ namespace ClinicCorporateApp.API.Controllers
         public async Task<IActionResult> Put(AlteraCliente alteraCliente)
         {
             var clienteAtualizado = await clienteManager.UpdateClienteAsync(alteraCliente);
-            if (clienteAtualizado == null) return NotFound();
-
+            if (clienteAtualizado == null)
+            {
+                return NotFound();
+            }
             return Ok(clienteAtualizado);
         }
 
@@ -106,7 +113,11 @@ namespace ClinicCorporateApp.API.Controllers
         [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status500InternalServerError)]
         public async Task<IActionResult> Delete(int id)
         {
-            await clienteManager.DeleteClienteAsync(id);
+            var clienteExcliudo = await clienteManager.DeleteClienteAsync(id);
+            if (clienteExcliudo == null)
+            {
+                return NotFound();
+            }
             return NoContent();
         }
     }
