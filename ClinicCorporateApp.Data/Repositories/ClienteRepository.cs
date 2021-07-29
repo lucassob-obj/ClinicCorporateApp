@@ -20,6 +20,7 @@ namespace ClinicCorporateApp.Data.Repositories
         {
             return await context.Clientes
                 .Include(p => p.Endereco)
+                .Include(p => p.Telefones)
                 .AsNoTracking().ToListAsync();
         }
 
@@ -27,10 +28,10 @@ namespace ClinicCorporateApp.Data.Repositories
         {
             return await context.Clientes
                 .Include(p => p.Endereco)
+                .Include(p => p.Telefones)
                 .SingleOrDefaultAsync(p => p.Id == id);
         }
 
-        //Insert
         public async Task<Cliente> InsertClienteAsync(Cliente cliente)
         {
             await context.Clientes.AddAsync(cliente);
@@ -38,25 +39,42 @@ namespace ClinicCorporateApp.Data.Repositories
             return cliente;
         }
 
-        //Update
         public async Task<Cliente> UpdateClienteAsync(Cliente cliente)
         {
-            var clienteConsultado = await context.Clientes.FindAsync(cliente.Id);
-            if (clienteConsultado == null) return clienteConsultado;
-
+            var clienteConsultado = await context.Clientes
+                                                 .Include(p => p.Endereco)
+                                                 .Include(p => p.Telefones)
+                                                 .FirstOrDefaultAsync(p => p.Id == cliente.Id);
+            if (clienteConsultado == null)
+            {
+                return null;
+            }
             context.Entry(clienteConsultado).CurrentValues.SetValues(cliente);
-            context.Clientes.Update(clienteConsultado);
+            clienteConsultado.Endereco = cliente.Endereco;
+            UpdateClienteTelefones(cliente, clienteConsultado);
             await context.SaveChangesAsync();
             return clienteConsultado;
         }
 
-        //Delete
-        public async Task DeleteClienteAsync(int id)
+        private void UpdateClienteTelefones(Cliente cliente, Cliente clienteConsultado)
+        {
+            clienteConsultado.Telefones.Clear();
+            foreach (var telefone in cliente.Telefones)
+            {
+                clienteConsultado.Telefones.Add(telefone);
+            }
+        }
+
+        public async Task<Cliente> DeleteClienteAsync(int id)
         {
             var clienteConsultado = await context.Clientes.FindAsync(id);
-            context.Clientes.Remove(clienteConsultado);
+            if (clienteConsultado == null)
+            {
+                return null;
+            }
+            var clienteRemovido = context.Clientes.Remove(clienteConsultado);
             await context.SaveChangesAsync();
-
+            return clienteRemovido.Entity;
         }
     }
 }

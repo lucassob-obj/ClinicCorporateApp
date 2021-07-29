@@ -3,6 +3,7 @@ using ClinicCorporateApp.Core.Domain;
 using ClinicCorporateApp.Core.Shared.ModelViews;
 using ClinicCorporateApp.Manager.Interfaces.Managers;
 using ClinicCorporateApp.Manager.Interfaces.Repositories;
+using Microsoft.Extensions.Logging;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -12,37 +13,46 @@ namespace ClinicCorporateApp.Manager.Implementations
     {
         private readonly IClienteRepository _clienteRepository;
         private readonly IMapper _mapper;
-        public ClienteManager(IClienteRepository clienteRepository, IMapper mapper)
+        private readonly ILogger<ClienteManager> _logger;
+
+        public ClienteManager(IClienteRepository clienteRepository, IMapper mapper, ILogger<ClienteManager> logger)
         {
             _clienteRepository = clienteRepository;
             _mapper = mapper;
+            _logger = logger;
         }
 
-        public async Task<IEnumerable<Cliente>> GetClientesAsync()
+        public async Task<IEnumerable<ClienteView>> GetClientesAsync()
         {
-            return await _clienteRepository.GetClientesAsync();
+            var clientes = await _clienteRepository.GetClientesAsync();
+            return _mapper.Map<IEnumerable<Cliente>, IEnumerable<ClienteView>>(clientes);
         }
 
-        public async Task<Cliente> GetClienteAsync(int id)
+        public async Task<ClienteView> GetClienteAsync(int id)
         {
-            return await _clienteRepository.GetClienteAsync(id);
+            var cliente = await _clienteRepository.GetClienteAsync(id);
+            return _mapper.Map<ClienteView>(cliente);
         }
 
-        public async Task DeleteClienteAsync(int id)
+        public async Task<ClienteView> DeleteClienteAsync(int id)
         {
-            await _clienteRepository.DeleteClienteAsync(id);
+            var cliente = await _clienteRepository.DeleteClienteAsync(id);
+            return _mapper.Map<ClienteView>(cliente);
         }
 
-        public async Task<Cliente> InsertClienteAsync(NovoCliente novoCliente)
+        public async Task<ClienteView> InsertClienteAsync(NovoCliente novoCliente)
         {
+            _logger.LogInformation("Chamada de negócio para inserir um cliente.");
             var cliente = _mapper.Map<Cliente>(novoCliente);
-            return await _clienteRepository.InsertClienteAsync(cliente);
+            cliente = await _clienteRepository.InsertClienteAsync(cliente);
+            return _mapper.Map<ClienteView>(cliente);
         }
 
-        public async Task<Cliente> UpdateClienteAsync(AlteraCliente alteraCliente)
+        public async Task<ClienteView> UpdateClienteAsync(AlteraCliente alteraCliente)
         {
             var cliente = _mapper.Map<Cliente>(alteraCliente);
-            return await _clienteRepository.UpdateClienteAsync(cliente);
+            cliente = await _clienteRepository.UpdateClienteAsync(cliente);
+            return _mapper.Map<ClienteView>(cliente);
         }
     }
 }

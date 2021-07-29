@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using SerilogTimings;
+using System.Linq;
 using System.Threading.Tasks;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
@@ -33,7 +34,12 @@ namespace ClinicCorporateApp.API.Controllers
         [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status500InternalServerError)]
         public async Task<IActionResult> Get()
         {
-            return Ok(await clienteManager.GetClientesAsync());
+            var clientes = await clienteManager.GetClientesAsync();
+            if (clientes.Any())
+            {
+                return Ok(clientes);
+            }
+            return NotFound();
         }
 
         /// <summary>
@@ -62,7 +68,7 @@ namespace ClinicCorporateApp.API.Controllers
         {
             logger.LogInformation("Objeto recebido: {@novoCliente}", novoCliente);
 
-            Cliente clienteInserido;
+            ClienteView clienteInserido;
             using (Operation.Time("Tempo de adição de um novo cliente."))
             {
                 logger.LogInformation("Foi requisitado a inserção de um novo cliente.");

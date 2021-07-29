@@ -6,7 +6,7 @@ namespace ClinicCorporateApp.Manager.Interfaces.Repositories
 {
     public interface IClienteRepository
     {
-        Task DeleteClienteAsync(int id);
+        Task<Cliente> DeleteClienteAsync(int id);
         Task<Cliente> GetClienteAsync(int id);
         Task<IEnumerable<Cliente>> GetClientesAsync();
         Task<Cliente> InsertClienteAsync(Cliente cliente);
