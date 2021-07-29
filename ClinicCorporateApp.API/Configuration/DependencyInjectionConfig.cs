@@ -1,6 +1,7 @@
 ﻿using ClinicCorporateApp.Data.Repositories;
 using ClinicCorporateApp.Manager.Implementations;
-using ClinicCorporateApp.Manager.Interfaces;
+using ClinicCorporateApp.Manager.Interfaces.Managers;
+using ClinicCorporateApp.Manager.Interfaces.Repositories;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace ClinicCorporateApp.API.Configuration
@@ -11,6 +12,9 @@ namespace ClinicCorporateApp.API.Configuration
         {
             services.AddScoped<IClienteRepository, ClienteRepository>();
             services.AddScoped<IClienteManager, ClienteManager>();
+            services.AddScoped<IMedicoManager, MedicoManager>();
+            services.AddScoped<IMedicoRepository, MedicoRepository>();
+            services.AddScoped<IEspecialidadeRepository, EspecialidadeRepository>();
         }
     }
 }

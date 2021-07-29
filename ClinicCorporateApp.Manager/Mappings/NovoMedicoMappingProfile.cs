@@ -9,9 +9,9 @@ namespace ClinicCorporateApp.Manager.Mappings
         public NovoMedicoMappingProfile()
         {
             CreateMap<NovoMedico, Medico>();
-            CreateMap<Medico, Medico>();
+            CreateMap<Medico, MedicoView>().ReverseMap();
             CreateMap<Especialidade, ReferenciaEspecialidade>().ReverseMap();
-            CreateMap<Especialidade, Especialidade>().ReverseMap();
+            CreateMap<Especialidade, EspecialidadeView>().ReverseMap();
             CreateMap<AlteraMedico, Medico>().ReverseMap();
         }
     }

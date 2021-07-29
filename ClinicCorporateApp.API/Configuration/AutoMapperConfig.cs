@@ -8,6 +8,7 @@ namespace ClinicCorporateApp.API.Configuration
         public static void AddAutoMapperConfig(this IServiceCollection services)
         {
             services.AddAutoMapper(typeof(NovoClienteMappingProfile), typeof(AlteraClienteMappingProfile));
+            services.AddAutoMapper(typeof(NovoMedicoMappingProfile));
         }
     }
 }

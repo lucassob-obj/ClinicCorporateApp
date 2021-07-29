@@ -3,7 +3,7 @@ using ClinicCorporateApp.Core.Shared.ModelViews;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace ClinicCorporateApp.Manager.Interfaces
+namespace ClinicCorporateApp.Manager.Interfaces.Managers
 {
     public interface IClienteManager
     {

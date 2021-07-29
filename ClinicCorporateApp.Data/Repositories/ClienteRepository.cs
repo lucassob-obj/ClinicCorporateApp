@@ -3,7 +3,7 @@ using ClinicCorporateApp.Data.Context;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
-using ClinicCorporateApp.Manager.Interfaces;
+using ClinicCorporateApp.Manager.Interfaces.Repositories;
 
 namespace ClinicCorporateApp.Data.Repositories
 {

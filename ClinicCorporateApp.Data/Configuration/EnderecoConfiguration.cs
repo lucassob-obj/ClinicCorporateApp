@@ -1,6 +1,7 @@
 ﻿using ClinicCorporateApp.Core.Domain;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
+using System;
 
 namespace ClinicCorporateApp.Data.Configuration
 {
@@ -9,6 +10,7 @@ namespace ClinicCorporateApp.Data.Configuration
         public void Configure(EntityTypeBuilder<Endereco> builder)
         {
             builder.HasKey(p => p.ClienteId);
+            builder.Property(p => p.Estado).HasConversion(p => p.ToString(), p => (Estado)Enum.Parse(typeof(Estado), p));
         }
     }
 }

@@ -16,9 +16,9 @@ namespace ClinicCorporateApp.Manager.Validator
             RuleFor(x => x.Endereco).SetValidator(new NovoEnderecoValidator());
         }
 
-        private bool IsMorF(char sexo)
+        private bool IsMorF(SexoView sexo)
         {
-            return sexo == 'M' || sexo == 'F';
+            return sexo == SexoView.M || sexo == SexoView.F;
         }
     }
 }

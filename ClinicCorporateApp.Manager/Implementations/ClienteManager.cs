@@ -1,7 +1,8 @@
 ﻿using AutoMapper;
 using ClinicCorporateApp.Core.Domain;
 using ClinicCorporateApp.Core.Shared.ModelViews;
-using ClinicCorporateApp.Manager.Interfaces;
+using ClinicCorporateApp.Manager.Interfaces.Managers;
+using ClinicCorporateApp.Manager.Interfaces.Repositories;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 

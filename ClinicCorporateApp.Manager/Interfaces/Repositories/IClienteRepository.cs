@@ -2,7 +2,7 @@
 using System.Threading.Tasks;
 using System.Collections.Generic;
 
-namespace ClinicCorporateApp.Manager.Interfaces
+namespace ClinicCorporateApp.Manager.Interfaces.Repositories
 {
     public interface IClienteRepository
     {
