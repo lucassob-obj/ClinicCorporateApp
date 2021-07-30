@@ -1,6 +1,8 @@
 ﻿using AutoMapper;
 using ClinicCorporateApp.Core.Domain;
 using ClinicCorporateApp.Core.Shared.ModelViews;
+using ClinicCorporateApp.Core.Shared.ModelViews.Endereco;
+using ClinicCorporateApp.Core.Shared.ModelViews.Telefone;
 using System;
 
 namespace ClinicCorporateApp.Manager.Mappings
@@ -15,6 +17,9 @@ namespace ClinicCorporateApp.Manager.Mappings
 
             CreateMap<NovoEndereco, Endereco>();
             CreateMap<NovoTelefone, Telefone>();
+            CreateMap<Cliente, ClienteView>();
+            CreateMap<Endereco, EnderecoView>();
+            CreateMap<Telefone, TelefoneView>();
         }
     }
 }

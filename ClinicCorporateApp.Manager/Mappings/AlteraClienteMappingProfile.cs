@@ -10,8 +10,8 @@ namespace ClinicCorporateApp.Manager.Mappings
         public AlteraClienteMappingProfile()
         {
             CreateMap<AlteraCliente, Cliente>()
-                .ForMember(d => d.UltimaAtualizacao, o => o.MapFrom(x => DateTime.Now))
-                .ForMember(d => d.DataNascimento, o => o.MapFrom(x => x.DataNascimento.Date));
+               .ForMember(d => d.UltimaAtualizacao, o => o.MapFrom(x => DateTime.Now))
+               .ForMember(d => d.DataNascimento, o => o.MapFrom(x => x.DataNascimento.Date));
         }
     }
 }
