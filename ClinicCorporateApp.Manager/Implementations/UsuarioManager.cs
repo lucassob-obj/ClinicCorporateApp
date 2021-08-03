@@ -3,6 +3,7 @@ using ClinicCorporateApp.Core.Domain;
 using ClinicCorporateApp.Core.Shared.ModelViews.Usuario;
 using ClinicCorporateApp.Manager.Interfaces.Managers;
 using ClinicCorporateApp.Manager.Interfaces.Repositories;
+using ClinicCorporateApp.Manager.Interfaces.Services;
 using Microsoft.AspNetCore.Identity;
 using System;
 using System.Collections.Generic;
@@ -14,11 +15,13 @@ namespace ClinicCorporateApp.Manager.Implementations
     {
         private readonly IUsuarioRepository repository;
         private readonly IMapper mapper;
+        private readonly IJWTService jwtService;
 
-        public UsuarioManager(IUsuarioRepository repository, IMapper mapper)
+        public UsuarioManager(IUsuarioRepository repository, IMapper mapper, IJWTService jwtService)
         {
             this.repository = repository;
             this.mapper = mapper;
+            this.jwtService = jwtService;
         }
 
         public async Task<IEnumerable<UsuarioView>> GetAsync()
@@ -31,8 +34,9 @@ namespace ClinicCorporateApp.Manager.Implementations
             return mapper.Map<UsuarioView>(await repository.GetAsync(login));
         }
 
-        public async Task<UsuarioView> InsertAsync(Usuario usuario)
+        public async Task<UsuarioView> InsertAsync(NovoUsuario novoUsuario)
         {
+            var usuario = mapper.Map<Usuario>(novoUsuario);
             ConverteSenhaEmHash(usuario);
             return mapper.Map<UsuarioView>(await repository.InsertAsync(usuario));
         }
@@ -49,14 +53,19 @@ namespace ClinicCorporateApp.Manager.Implementations
             return mapper.Map<UsuarioView>(await repository.UpdateAsync(usuario));
         }
 
-        public async Task<bool> ValidaSenhaAsync(Usuario usuario)
+        public async Task<UsuarioLogado> ValidaUsuarioEGeraTokenAsync(Usuario usuario)
         {
             var usuarioConsultado = await repository.GetAsync(usuario.Login);
             if (usuarioConsultado == null)
+                return null;
+            
+            if (await ValidaEAtualizaHashAsync(usuario, usuarioConsultado.Senha))
             {
-                return false;
+                var usuarioLogado = mapper.Map<UsuarioLogado>(usuarioConsultado);
+                usuarioLogado.Token = jwtService.GerarToken(usuarioConsultado);
+                return usuarioLogado;
             }
-            return await ValidaEAtualizaHashAsync(usuario, usuarioConsultado.Senha);
+            return null;
         }
 
         private async Task<bool> ValidaEAtualizaHashAsync(Usuario usuario, string hash)

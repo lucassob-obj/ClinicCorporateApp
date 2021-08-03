@@ -9,8 +9,8 @@ namespace ClinicCorporateApp.Manager.Interfaces.Managers
     {
         Task<IEnumerable<UsuarioView>> GetAsync();
         Task<UsuarioView> GetAsync(string login);
-        Task<UsuarioView> InsertAsync(Usuario usuario);
+        Task<UsuarioView> InsertAsync(NovoUsuario usuario);
         Task<UsuarioView> UpdateMedicoAsync(Usuario usuario);
-        Task<bool> ValidaSenhaAsync(Usuario usuario);
+        Task<UsuarioLogado> ValidaUsuarioEGeraTokenAsync(Usuario usuario);
     }
 }

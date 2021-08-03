@@ -31,6 +31,8 @@ namespace ClinicCorporateApp.API
         {
             services.AddControllers();
 
+            services.AddJwtConfig(Configuration);
+
             services.AddFluentValidationConfig();
 
             services.AddDatabaseConfiguration(Configuration);
@@ -59,6 +61,8 @@ namespace ClinicCorporateApp.API
             app.UseHttpsRedirection();
 
             app.UseRouting();
+
+            app.UseJwtConfig();
 
             app.UseAuthorization();
 
